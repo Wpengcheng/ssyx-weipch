@@ -8,21 +8,19 @@
         <outputRelativeToContentRoot value="true" />
         <module name="common-util" />
         <module name="model" />
-        <module name="common" />
         <module name="service-util" />
         <module name="service" />
-        <module name="ssyx-service-parent" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="common" options="-parameters" />
+      <module name="common" options="" />
       <module name="common-util" options="-parameters" />
       <module name="model" options="-parameters" />
       <module name="service" options="-parameters" />
       <module name="service-util" options="-parameters" />
-      <module name="ssyx-service-parent" options="-parameters" />
+      <module name="ssyx-service-parent" options="" />
     </option>
   </component>
 </project>

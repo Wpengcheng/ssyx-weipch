@@ -1,10 +1,9 @@
 package com.weipch.vo.product;
 
-import com.atguigu.ssyx.model.product.*;
-import com.atguigu.ssyx.model.product.SkuAttrValue;
-import com.atguigu.ssyx.model.product.SkuImage;
-import com.atguigu.ssyx.model.product.SkuInfo;
-import com.atguigu.ssyx.model.product.SkuPoster;
+import com.weipch.model.product.SkuAttrValue;
+import com.weipch.model.product.SkuImage;
+import com.weipch.model.product.SkuInfo;
+import com.weipch.model.product.SkuPoster;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 

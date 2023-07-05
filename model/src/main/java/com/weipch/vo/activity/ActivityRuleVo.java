@@ -1,7 +1,8 @@
 package com.weipch.vo.activity;
 
-import com.atguigu.ssyx.model.activity.ActivityRule;
-import com.atguigu.ssyx.model.activity.ActivitySku;
+
+import com.weipch.model.activity.ActivityRule;
+import com.weipch.model.activity.ActivitySku;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;

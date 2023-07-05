@@ -1,6 +1,6 @@
 package com.weipch.vo.order;
 
-import com.atguigu.ssyx.enums.OrderStatus;
+import com.weipch.enums.OrderStatus;
 import lombok.Data;
 import io.swagger.annotations.ApiModelProperty;
 

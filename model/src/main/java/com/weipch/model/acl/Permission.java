@@ -1,5 +1,3 @@
-//
-//
 package com.weipch.model.acl;
 
 import com.baomidou.mybatisplus.annotation.TableField;

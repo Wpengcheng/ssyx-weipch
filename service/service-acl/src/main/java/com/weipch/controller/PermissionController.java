@@ -9,15 +9,16 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
 @RequestMapping("/admin/acl/permission")
 @Api(tags = "菜单管理")
-//@CrossOrigin //跨域
+@CrossOrigin //跨域
 public class PermissionController {
 
-    @Autowired
+    @Resource
     private PermissionService permissionService;
 
     //查询所有菜单

@@ -12,19 +12,20 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 
 @Api(tags = "用户接口")
 @RestController
 @RequestMapping("/admin/acl/user")
-//@CrossOrigin
-public class AdminControlller {
+@CrossOrigin
+public class AdminController {
 
-    @Autowired
+    @Resource
     private AdminService adminService;
 
-    @Autowired
+    @Resource
     private RoleService roleService;
 
     //为用户进行分配
@@ -80,22 +81,22 @@ public class AdminControlller {
 //    url: `${api_name}/save`,
 //    method: 'post',
 //    data: user
-    @ApiOperation("添加用户")
-    @PostMapping("save")
-    public ResponseResult<Void> save(@RequestBody Admin admin) {
-        //获取输入的密码
-        String password = admin.getPassword();
-
-        //对输入密码进行加密 MD5
-        String passwordMD5 = MD5.encrypt(password);
-
-        //设置到admin对象里面
-        admin.setPassword(passwordMD5);
-
-        //调用方法添加
-        adminService.save(admin);
-        return ResponseResult.success(null);
-    }
+//    @ApiOperation("添加用户")
+//    @PostMapping("save")
+//    public ResponseResult<Void> save(@RequestBody Admin admin) {
+//        //获取输入的密码
+//        String password = admin.getPassword();
+//
+//        //对输入密码进行加密 MD5
+//        String passwordMD5 = MD5.encrypt(password);
+//
+//        //设置到admin对象里面
+//        admin.setPassword(passwordMD5);
+//
+//        //调用方法添加
+//        adminService.save(admin);
+//        return ResponseResult.success(null);
+//    }
 
     //4 修改用户
 //    url: `${api_name}/update`,

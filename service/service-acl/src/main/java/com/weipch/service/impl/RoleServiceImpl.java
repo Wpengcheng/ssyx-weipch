@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,30 +25,18 @@ import java.util.stream.Collectors;
 public class RoleServiceImpl extends ServiceImpl<RoleMapper, Role> implements RoleService {
 
     //用户角色关系
-    @Autowired
+    @Resource
     private AdminRoleService adminRoleService;
 
     //1 角色列表（条件分页查询）
     @Override
-    public IPage<Role> selectRolePage(Page<Role> pageParam,
-                                      RoleQueryVo roleQueryVo) {
-        //获取条件值
+    public Page<Role> selectRolePage(Long current,Long limit, RoleQueryVo roleQueryVo) {
         String roleName = roleQueryVo.getRoleName();
-
-        //创建mp条件对象
         LambdaQueryWrapper<Role> wrapper = new LambdaQueryWrapper<>();
-
-        //判断条件值是否为空，不为封装查询条件
-        // rolename like ?
         if(!StringUtils.isEmpty(roleName)) {
             wrapper.like(Role::getRoleName,roleName);
         }
-
-        //调用方法实现条件分页查询
-        IPage<Role> rolePage = baseMapper.selectPage(pageParam, wrapper);
-
-        //返回分页对象
-        return rolePage;
+        return baseMapper.selectPage(new Page<>(current,limit), wrapper);
     }
 
     //获取所有角色，和根据用户id查询用户分配角色列表
